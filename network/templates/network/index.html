@@ -1,0 +1,19 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block body %}
+
+    {% if user.is_authenticated %}
+    <!-- everything is rendered inside this div -->
+    <div id="container">
+        <div id="create-posts"></div>
+        <div id="display-posts"></div>
+    </div>
+    <script type="text/babel" src="{% static 'network/index.js' %}"></script>
+    <script type="text/babel">
+        ReactDOM.render(<CreatePost />, document.querySelector("#create-posts"));
+        ReactDOM.render(<DisplayPosts page="index" />, document.querySelector("#display-posts"));
+    </script>
+    {% endif %}
+
+
+{% endblock %}

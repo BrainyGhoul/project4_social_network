@@ -1,0 +1,14 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block body %}
+
+    <div id="container">
+        <div id="display-posts">
+        </div>
+    </div>
+    <script type="text/babel" src="{% static 'network/index.js' %}"></script>
+    <script type="text/babel">
+        ReactDOM.render(<DisplayPosts page="following" />, document.querySelector("#display-posts"));
+    </script>
+
+{% endblock %}

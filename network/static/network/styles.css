@@ -1,0 +1,126 @@
+/* making the height 100% so that they span over the whole page */
+.body, body, html, #container{
+    height: 100%;
+}
+/* container for whole page */
+#container {
+    text-align: center;
+    width: 50%;
+    margin: 0px auto 0px auto;
+    border: 1px solid gray;
+    border-top: none;
+    border-bottom: none;
+}
+#post-tweet {
+    text-align: right;
+}
+/* contianer for every post */
+.post-inner-container {
+    text-align: left;
+    padding: 2% 5% 2% 5%;
+    width: 100%;
+    border-bottom: 1px solid gray; 
+    height: auto;
+}
+.spacing-line-container {
+    padding: 2% 0 2% 0;
+}
+.spacing-line {
+    background-color: gray;
+    color: gray;
+    width: 100%;
+    height: 1px;
+}
+#new-post-content:focus {
+    outline: none;
+}
+.button {
+    border-radius: 50px;
+    margin-left: 10px;
+}
+#load-posts {
+    margin: 10px;
+}
+#timeline-spacing {
+    height: 7px; 
+    background-color: lightgray;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 100;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#new-post-content {
+    border: none;
+    display: block;
+    width: 100%;
+    min-height: 20px;
+    resize: none;
+    overflow: hidden;
+    font-size: x-large;
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.text-length {
+    padding-top: 2px;
+    font-size: small;
+    color: gray;
+}
+
+#read-all-posts {
+    display: none;
+}
+
+.posts-likes {
+    display: inline-block;
+    font-size: 25px;
+}
+.posts-text {
+    height: auto;
+    width: 100%;
+    word-wrap: break-word;
+    background-color: white;
+    border: none;
+    resize: none;
+}
+.posts-text:focus {
+    outline: none;
+}
+.like-symbol {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.posted-date {
+    font-size: 15px;
+    color: gray;
+}
+td {
+    padding: 10px;
+}
+#post-heading {
+    text-align: left;
+    padding: 2% 5% 2% 5%;
+}
+
+.edit-button {
+    border-radius: 30px;
+}
+.edit-container {
+    display: inline-block;
+    text-align: right;
+}
+
+.edit-post-submit {
+    display: none;
+}
+.post-text-container {
+    text-align: right;
+}

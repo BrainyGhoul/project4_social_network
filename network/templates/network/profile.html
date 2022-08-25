@@ -1,0 +1,22 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block body %}
+
+    <div id="container">
+        <div id="profile"></div>
+        <div id="display-posts"></div>
+    </div>
+
+    <script type="text/babel" src="{% static 'network/index.js' %}"></script>
+    <script type="text/babel">
+        fetch("/profile/{{ username }}", {
+            method: "POST",
+            body: {}
+        }).then(response => response.json())
+        .then(result => {
+            ReactDOM.render(<PostOrProfile same_user={result.same_user} id={result.pk} is_post={false} username={result.username} likes_or_followers={ result.followers } following={ result.following } is_liked_or_is_followed={ result.is_following } />, document.querySelector("#profile"));
+        })
+        ReactDOM.render(<DisplayPosts page="profile" profile="{{ username }}" />, document.querySelector("#display-posts"));
+    </script>
+
+{% endblock %}
